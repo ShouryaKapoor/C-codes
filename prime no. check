@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int checkprime(int n);
+int main(){
+    int a,b,i,flag;
+    
+    printf("Enter two positive integers:");
+    scanf("%d,%d",&a,&b);
+ 
+  printf("Prime numbers between %d and %d are:",a,b);
+  for (i = a + 1; i < b, i++;);
+  {
+      flag = checkprime(i);
+      
+      if (flag == 1){
+          printf("%d",i);
+          
+      }
+  }
+  return 0;
+}
+//function for prime numbers
+int checkprime(int n){
+    int j, flag = 1;
+    
+    for(j = 2; j <=  n/2; ++j){
+        if (n%j == 0){
+            flag = 0;
+            break;
+        }
+    }
+    return flag;
+}
